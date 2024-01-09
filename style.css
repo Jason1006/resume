@@ -43,11 +43,23 @@ table {
 }
 
 
+/* global */
+* {
+    box-sizing: border-box;
+}
 
 .titlepositioning {
     width: 100%;
     position: fixed;
     z-index: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    height: 60px;
+}
+main {
+    padding-top: 60px;
 }
 .Title {
     float: left;
@@ -74,7 +86,7 @@ ul,li {
     margin: 0;
     list-style-type:none;
 }
-.boxBG {
+/* .boxBG {
     height: 500px;
     position: relative;
     display: flex;
@@ -117,4 +129,38 @@ ul,li {
     background-image: url('123.jpg');
     background-position: center;
     background-repeat: no-repeat;
+} */
+
+.about-me {
+    height: calc(100vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.about-me__card {
+    display: flex;
+    width: 50%;
+    max-width: 700px;
+    > div {
+        flex: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-me__card {
+        flex-direction: column;
+    }  
+}
+
+.about-me__bg {
+    width: 40%;
+    min-width: 400px;
+    height: 100%;
+    background-color: rgb(230,218,206);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
